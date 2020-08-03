@@ -1,12 +1,10 @@
 package model.entity.person;
 
-import model.entity.Login;
-
 public class Management extends Person {
 
     private String password;
     private String username;
-    private Login login;
+
 
     public String getUsername() {
         return username;
@@ -16,13 +14,7 @@ public class Management extends Person {
         this.username = username;
     }
 
-    public Login getLogin() {
-        return login;
-    }
 
-    public void setLogin(Login login) {
-        this.login = login;
-    }
 
     public String getPassword() {
         return password;

@@ -5,7 +5,6 @@ import model.entity.Entities;
 public class Person extends Entities {
 
 
-
     private String family;
     private String phone;
 
