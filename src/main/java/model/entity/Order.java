@@ -5,7 +5,7 @@ import model.entity.products.Product;
 import java.util.Date;
 import java.util.Map;
 
-public class Order {
+public class Order extends Entities{
 
 
     private boolean isOrdered;
