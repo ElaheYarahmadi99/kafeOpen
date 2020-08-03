@@ -1,9 +1,10 @@
 package model.entity.person;
 
-public class Person {
+import model.entity.Entities;
 
-    private Long id;
-    private String name;
+public class Person extends Entities {
+
+
     private String family;
     private String phone;
 
@@ -15,21 +16,6 @@ public class Person {
         this.phone = phone;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getFamily() {
         return family;

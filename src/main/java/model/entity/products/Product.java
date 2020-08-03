@@ -1,22 +1,17 @@
 package model.entity.products;
 
+import model.entity.Entities;
+
 import java.util.List;
 
-public class Product {
+public class Product extends Entities {
 
-    private String name;
+
     private Long price;
-    private Long id;
     private int numberOfProduct;
     private List<Product> list;
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Long getPrice() {
         return price;
@@ -26,13 +21,6 @@ public class Product {
         this.price = price;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public int getNumberOfProduct() {
         return numberOfProduct;

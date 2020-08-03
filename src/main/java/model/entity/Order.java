@@ -7,19 +7,12 @@ import java.util.Map;
 
 public class Order {
 
-    private Long id;
+
     private boolean isOrdered;
     private boolean isCancelled;
     private Date TimeOrder;
     private Map<Product, Integer> products;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public boolean isOrdered() {
         return isOrdered;
