@@ -10,8 +10,16 @@ public class Product extends Entities {
     private Long price;
     private int numberOfProduct;
     private List<Product> list;
+    private String productDescription;
 
 
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
+    }
 
     public Long getPrice() {
         return price;

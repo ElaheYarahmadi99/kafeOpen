@@ -6,6 +6,24 @@ public class Admin extends Person {
 
     private Date start_date;
     private Date End_Date;
+    private String password;
+    private String username;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     private Long salary;
 
