@@ -5,6 +5,7 @@ import model.entity.products.Product;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 
@@ -28,6 +29,17 @@ public class Order {
     @JoinColumn(name = "billingId")
     private Billing billing;
 
+    @OneToMany (cascade = CascadeType.ALL)
+    @JoinColumn(name = "productId")
+    private List<Product> products;
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 
     public Long getOrderId() {
         return orderId;

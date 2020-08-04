@@ -28,6 +28,14 @@ public class Billing {
     @OneToOne(mappedBy = "billing")
     private Order order;
 
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
     public List<Product> getProducts() {
         return products;
     }
