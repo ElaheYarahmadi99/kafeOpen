@@ -1,11 +1,20 @@
 package model.entity;
-
+import javax.persistence.*;
 import java.util.Date;
 
+
+@Table(name = "entities")
+@Entity(name = "entities")
 public class Entities {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String name;
+    @Column(columnDefinition = "Date")
     private Date start_Date;
+    @Column(columnDefinition = "Date")
     private Date end_Date;
 
     public Long getId() {

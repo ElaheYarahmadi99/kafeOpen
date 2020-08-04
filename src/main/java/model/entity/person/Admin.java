@@ -1,13 +1,21 @@
 package model.entity.person;
 
+import javax.persistence.*;
 import java.util.Date;
 
+
+@Table(name = "admin")
+@Entity(name = "admin")
 public class Admin extends Person {
 
-    private Date start_date;
-    private Date End_Date;
+
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String password;
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String username;
+    @Column(columnDefinition = "NUMBER")
+    private Long salary;
+
 
     public String getPassword() {
         return password;
@@ -25,23 +33,6 @@ public class Admin extends Person {
         this.username = username;
     }
 
-    private Long salary;
-
-    public Date getStart_date() {
-        return start_date;
-    }
-
-    public void setStart_date(Date start_date) {
-        this.start_date = start_date;
-    }
-
-    public Date getEnd_Date() {
-        return End_Date;
-    }
-
-    public void setEnd_Date(Date end_Date) {
-        End_Date = end_Date;
-    }
 
     public Long getSalary() {
         return salary;

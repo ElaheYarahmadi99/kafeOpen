@@ -1,33 +1,24 @@
 package model.entity.products;
 
+import model.entity.Billing;
 import model.entity.Entities;
 
-import java.util.List;
+import javax.persistence.*;
 
+
+@Table(name = "product")
+@Entity(name = "product")
 public class Product extends Entities {
 
 
-    private Long price;
-    private int numberOfProduct;
 
+    @Column(columnDefinition = "NUMBER")
+    private Long price;
+    @Column(columnDefinition = "NUMBER")
+    private int numberOfProduct;
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String productDescription;
 
-
-    public String getProductDescription() {
-        return productDescription;
-    }
-
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
-
-    public Long getPrice() {
-        return price;
-    }
-
-    public void setPrice(Long price) {
-        this.price = price;
-    }
 
 
     public int getNumberOfProduct() {

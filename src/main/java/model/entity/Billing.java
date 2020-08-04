@@ -3,20 +3,37 @@ package model.entity;
 import model.entity.person.Customer;
 import model.entity.products.Product;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Table(name = "billing")
+@Entity(name = "billing")
 public class Billing {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long billingId;
+    @OneToOne(mappedBy = "billing")
     private Customer customer;
+
+
+    @Column(columnDefinition = "NUMBER")
     private Long totalPrice;
-    private Product product;
 
-    public Product getProduct() {
-        return product;
+    @OneToMany (cascade = CascadeType.ALL)
+    @JoinColumn(name = "productId")
+    private List<Product> products;
 
+    @OneToOne(mappedBy = "billing")
+    private Order order;
+
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     public Long getTotalPrice() {

@@ -3,17 +3,29 @@ package model.entity;
 import model.entity.person.Customer;
 import model.entity.products.Product;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Map;
 
-public class Order extends Entities{
 
 
+@Table(name = "order")
+@Entity(name = "order")
+public class Order {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
-    private boolean isOrdered;
-    private boolean isCancelled;
+    @Column(columnDefinition = "Date")
     private Date TimeOrder;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customerId")
     private Customer customer;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "billingId")
     private Billing billing;
 
 
@@ -41,21 +53,6 @@ public class Order extends Entities{
         this.billing = billing;
     }
 
-    public boolean isOrdered() {
-        return isOrdered;
-    }
-
-    public void setOrdered(boolean ordered) {
-        isOrdered = ordered;
-    }
-
-    public boolean isCancelled() {
-        return isCancelled;
-    }
-
-    public void setCancelled(boolean cancelled) {
-        isCancelled = cancelled;
-    }
 
     public Date getTimeOrder() {
         return TimeOrder;
