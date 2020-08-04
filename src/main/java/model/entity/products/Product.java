@@ -9,7 +9,7 @@ public class Product extends Entities {
 
     private Long price;
     private int numberOfProduct;
-    private List<Product> list;
+
     private String productDescription;
 
 
@@ -38,13 +38,7 @@ public class Product extends Entities {
         this.numberOfProduct = numberOfProduct;
     }
 
-    public List<Product> getList() {
-        return list;
-    }
 
-    public void setList(List<Product> list) {
-        this.list = list;
-    }
 
 
 }
