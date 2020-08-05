@@ -1,25 +1,24 @@
 package model.entity.products;
 
+import model.entity.Billing;
 import model.entity.Entities;
 
-import java.util.List;
+import javax.persistence.*;
 
+
+@Table(name = "product")
+@Entity(name = "product")
 public class Product extends Entities {
 
 
+
+    @Column(columnDefinition = "NUMBER")
     private Long price;
+    @Column(columnDefinition = "NUMBER")
     private int numberOfProduct;
-    private List<Product> list;
+    @Column(columnDefinition = "VARCHAR2(20)")
+    private String productDescription;
 
-
-
-    public Long getPrice() {
-        return price;
-    }
-
-    public void setPrice(Long price) {
-        this.price = price;
-    }
 
 
     public int getNumberOfProduct() {
@@ -30,13 +29,7 @@ public class Product extends Entities {
         this.numberOfProduct = numberOfProduct;
     }
 
-    public List<Product> getList() {
-        return list;
-    }
 
-    public void setList(List<Product> list) {
-        this.list = list;
-    }
 
 
 }

@@ -2,11 +2,19 @@ package model.entity.person;
 
 import model.entity.Entities;
 
+import javax.persistence.*;
+
+@Table(name = "person")
+@Entity(name = "person")
 public class Person extends Entities {
 
 
-    private String family;
+    private String name;
+    @Column(columnDefinition = "VARCHAR2(20)")
+    private String lastName;
+    @Column(columnDefinition = "VARCHAR2(20)")
     private String phone;
+
 
     public String getPhone() {
         return phone;
@@ -16,12 +24,21 @@ public class Person extends Entities {
         this.phone = phone;
     }
 
-
-    public String getFamily() {
-        return family;
+    @Override
+    public String getName() {
+        return name;
     }
 
-    public void setFamily(String family) {
-        this.family = family;
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
