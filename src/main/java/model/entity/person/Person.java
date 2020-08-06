@@ -1,15 +1,22 @@
 package model.entity.person;
 
 import model.entity.Entities;
+import org.hibernate.annotations.Polymorphism;
+import org.hibernate.annotations.PolymorphismType;
 
 import javax.persistence.*;
+import java.util.Date;
 
-@Table(name = "person")
-@Entity(name = "person")
+/*(name = "person_ID")*/
+/*
+@PrimaryKeyJoinColumn(name = "person_ID", referencedColumnName ="entities_ID")
+*/
+
+@Entity
+@Table(name= "person")
 public class Person extends Entities {
 
 
-    private String name;
     @Column(columnDefinition = "VARCHAR2(20)")
     private String lastName;
     @Column(columnDefinition = "VARCHAR2(20)")
@@ -24,15 +31,6 @@ public class Person extends Entities {
         this.phone = phone;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getLastName() {
         return lastName;
@@ -41,4 +39,6 @@ public class Person extends Entities {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+
 }

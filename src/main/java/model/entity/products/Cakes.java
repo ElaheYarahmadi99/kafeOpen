@@ -1,9 +1,10 @@
-package model.entity.products;
+/*package model.entity.products;
 
 import javax.persistence.*;
 
-@Table(name = "cakes")
-@Entity(name = "cakes")
+@Entity
+*//*@Table(name= "cakes")*//*
+@PrimaryKeyJoinColumn(name = "product_ID"*//*, referencedColumnName = "product_ID"*//*)
 public class Cakes extends Product {
 
     private Long price;
@@ -20,6 +21,13 @@ public class Cakes extends Product {
         this.numberOfCakes = numberOfCakes;
     }
 
+    public Long getPrice() {
+        return price;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
+    }
 
     public String getProductDescription() {
         return productDescription;
@@ -28,12 +36,4 @@ public class Cakes extends Product {
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
-
-    public Long getPrice() {
-        return price;
-    }
-
-    public void setPrice(Long price) {
-        this.price = price;
-    }
-}
+}*/

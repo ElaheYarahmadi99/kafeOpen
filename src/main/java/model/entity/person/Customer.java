@@ -1,14 +1,13 @@
 package model.entity.person;
 
 import model.entity.Billing;
-import model.entity.Order;
 
 import javax.persistence.*;
 import java.util.List;
 
 
-@Table(name = "customer")
-@Entity(name = "customer")
+@Entity(name = "customer_ID")
+@Table(name= "customer")
 public class Customer extends Person {
 
 
@@ -20,16 +19,6 @@ public class Customer extends Person {
     @JoinColumn(name = "billingId")
     private Billing billing;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Order> orders;
-
-    public List<Order> getOrder() {
-        return orders;
-    }
-
-    public void setOrder(List<Order> order) {
-        this.orders = order;
-    }
 
 
     public Billing getBilling() {

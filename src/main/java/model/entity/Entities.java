@@ -3,13 +3,17 @@ import javax.persistence.*;
 import java.util.Date;
 
 
-@Table(name = "entities")
-@Entity(name = "entities")
-public class Entities {
+@Entity
+@Table(name= "billing")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Entities {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "NUMBER")
+    @SequenceGenerator(name = "entitiesSeq",sequenceName ="entities_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO , generator = "entitiesSeq")
     private Long id;
+
     @Column(columnDefinition = "VARCHAR2(20)")
     private String name;
     @Column(columnDefinition = "Date")

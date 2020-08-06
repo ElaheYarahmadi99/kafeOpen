@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 
-@Table(name = "admin")
 @Entity(name = "admin")
+@Table(name= "admin")
 public class Admin extends Person {
 
 

@@ -2,8 +2,8 @@ package model.entity.person;
 
 import javax.persistence.*;
 
-@Table(name = "management")
-@Entity(name = "management")
+@Entity
+@Table(name= "management")
 public class Management extends Person {
 
 
