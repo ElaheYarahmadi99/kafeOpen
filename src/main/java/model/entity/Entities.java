@@ -6,7 +6,7 @@ import java.util.Date;
 @Entity
 @Table(name= "billing")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Entities {
+public class Entities {
 
     @Id
     @Column(columnDefinition = "NUMBER")
