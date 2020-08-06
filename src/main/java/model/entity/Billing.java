@@ -28,7 +28,7 @@ public class Billing {
 
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk")
+    @JoinColumn(name = "customer_id")
     private List<Product> products;
 
 
