@@ -4,6 +4,8 @@ package model.entity;
 import model.entity.products.Product;
 
 import javax.persistence.*;
+import javax.xml.crypto.Data;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -16,9 +18,8 @@ public class Billing {
     @GeneratedValue(strategy = GenerationType.AUTO , generator = "billingSeq")
     private Long id;
 
-
-    /*@OneToOne(mappedBy = "billing")
-    private Customer customer;*/
+    @Column(columnDefinition = "Date")
+    private Date orderDate;
 
 
     @Column(columnDefinition = "NUMBER")
@@ -56,12 +57,11 @@ public class Billing {
         this.id = id;
     }
 
-
-    /*public Customer getCustomer() {
-        return customer;
+    public Date getOrderDate() {
+        return orderDate;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }*/
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
 }
